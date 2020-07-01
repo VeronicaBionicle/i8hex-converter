@@ -4,6 +4,7 @@ import numpy as np
 from matplotlib.pyplot import clf, plot, title, grid, gcf, gca, xlabel, xlim, xticks, ylabel, ylim, yticks, hlines, savefig, show, subplots_adjust, get_current_fig_manager
 import matplotlib.dates as mdates
 from datetime import datetime
+import collections
 
 # func to plot lines of nominal voltages
 def plot_standart_voltage (min_x, max_x, nominal_voltage=220, margin = 0.1):
@@ -71,7 +72,7 @@ def plot_data(data, plot_standart = True, fname = None):
     colors = ['b','g','r','c','m','y','k','orange', 'seagreen', 'purple']
     #plot original data
     for i, key in enumerate(data.keys()):
-        plot(data[key][0]+min_x, data[key][1], linewidth=2, color=colors[i%10], linestyle=':', marker='.')
+        plot(data[key][0]+min_x, data[key][1], linewidth=2, color=colors[i%10], linestyle=':', marker='.', alpha=0.4)
     # calculate and plot averaged data
     average_data(data, min_points = 24*6)
     plot(data["Average"][0]+min_x, data["Average"][1], linewidth=2, color='black', linestyle='-')
@@ -116,31 +117,43 @@ def average_data (data_dict, min_points = 144):
     avg_y/=len(data_dict)
     data_dict["Average"] = [avg_x, avg_y]
 
+# function to monitor frequency
+def frequency_statistics(data):
+    distribution = collections.Counter(data)
+    for item in distribution:
+        print(item, "Hz -> ", distribution[item]/sum(distribution.values())*100,"%" )
+
 #parce data from txt -> 0 column - dates, 3 column - Line Voltage
-file_dates, y_prices = np.loadtxt(
-            os.path.join(DATA_DIR, 'Datalog_28_04_2020.txt'),
+file_dates, voltages, frequency = np.loadtxt(
+            os.path.join(DATA_DIR, 'Datalog_27_06_2020.txt'),
             delimiter = '	',
             dtype = object,
-            converters={0: lambda x: datetime.strptime(x.decode("utf-8"), "%m/%d/%Y %H:%M:%S"), 3:float},  
-            usecols=(0,3),
+            converters={0: lambda x: datetime.strptime(x.decode("utf-8"), "%m/%d/%Y %H:%M:%S"), 3:float, 6:float},  
+            usecols=(0,3,6),
             unpack=True,
             skiprows = 1 #skip title
 )
 
 # formatting
 x_dates = mdates.date2num(file_dates)   # format data objects to number of days from 0001-01-01
-y = y_prices.astype(float)   # format to float
+y = voltages.astype(float)   # format to float
+freq_y = frequency.astype(float)   # format to float
 #make a dict from data -> keys are dates, col[0] -> x (time), col[1] -> voltage at moment x
 data = make_dict (x_dates, y)
+data = delete_partial_data(data, min_points=24*60/10)    # sampling each 10 minutes
 
-if (False):
+frequency_statistics(freq_y)
+
+if (True):
     print(data.keys()) #dict_keys
     for key in data.keys():
         print(datetime.strftime(mdates.num2date(key), "%d/%m/%Y"), " -> ", len(data[key][0]), "data points")
 
-
-data = delete_partial_data(data, min_points=24*60/10)    # sampling each 10 minutes
 # output
-file_name = None # "all.png"
+file_name = None # "something.png" or None
 #plot_raw_data(x_dates, y, plot_standart = True, fname = file_name)
 plot_data(data, plot_standart = True, fname = file_name)
+
+'''
+Datalog_13_05_2020_remastered - 10/05 is combined from it`s real data and 11/05 data
+'''
