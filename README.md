@@ -12,4 +12,5 @@
     2. Push button _Convert from hex_
     3. Watch result
     4. Export to .txt file ***There is directory Output for export files***
+---
 ![How it works](https://github.com/VeronicaBionicle/i8hex-converter/blob/master/use.gif)
