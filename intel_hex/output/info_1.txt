@@ -1,0 +1,21 @@
+Data:
+[0, 4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80, 85, 89, 93, 97, 101, 105, 109, 113, 117, 121, 125, 129, 133, 137, 141, 145, 149, 153, 157, 161, 165, 170, 174, 178, 182, 186, 190, 194, 198, 202, 206, 210, 214, 218, 222, 226, 230, 234, 238, 242, 246, 250, 255, 0, 8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96, 104, 112, 120, 128, 136, 144, 152, 160, 168, 176, 184, 192, 200, 208, 216, 224, 232, 240, 248, 255, 248, 240, 232, 224, 216, 208, 200, 192, 184, 176, 168, 160, 152, 144, 136, 128, 120, 112, 104, 96, 88, 80, 72, 64, 56, 48, 40, 32, 24, 16, 8, 127, 114, 102, 89, 77, 66, 55, 45, 36, 27, 20, 14, 8, 4, 1, 0, 0, 0, 3, 6, 11, 17, 23, 31, 40, 50, 61, 72, 83, 96, 108, 121, 133, 146, 158, 171, 182, 193, 204, 214, 223, 231, 237, 243, 248, 251, 254, 254, 254, 253, 250, 246, 240, 234, 227, 218, 209, 199, 188, 177, 165, 152, 140, 127, 51, 49, 46, 40, 32, 24, 15, 7, 1, 0, 2, 11, 26, 47, 73, 103, 135, 166, 194, 218, 236, 248, 254, 254, 250, 243, 235, 226, 218, 211, 206, 204, 204, 206, 211, 218, 226, 235, 243, 250, 254, 254, 248, 236, 218, 194, 166, 135, 103, 73, 47, 26, 11, 2, 0, 1, 7, 15, 24, 32, 40, 46, 49, 51]
+Details:
+Got lines: 17
+line:   1 bytes: 16 addr: 0000 rec.type: Data(00) bytes: 00 04 08 0C 10 14 18 1C 20 24 28 2C 30 34 38 3C chksum: 10 
+line:   2 bytes: 16 addr: 0010 rec.type: Data(00) bytes: 40 44 48 4C 50 55 59 5D 61 65 69 6D 71 75 79 7D chksum: F5 
+line:   3 bytes: 16 addr: 0020 rec.type: Data(00) bytes: 81 85 89 8D 91 95 99 9D A1 A5 AA AE B2 B6 BA BE chksum: DA 
+line:   4 bytes: 16 addr: 0030 rec.type: Data(00) bytes: C2 C6 CA CE D2 D6 DA DE E2 E6 EA EE F2 F6 FA FF chksum: BF 
+line:   5 bytes: 16 addr: 0040 rec.type: Data(00) bytes: 00 08 10 18 20 28 30 38 40 48 50 58 60 68 70 78 chksum: F0 
+line:   6 bytes: 16 addr: 0050 rec.type: Data(00) bytes: 80 88 90 98 A0 A8 B0 B8 C0 C8 D0 D8 E0 E8 F0 F8 chksum: E0 
+line:   7 bytes: 16 addr: 0060 rec.type: Data(00) bytes: FF F8 F0 E8 E0 D8 D0 C8 C0 B8 B0 A8 A0 98 90 88 chksum: 51 
+line:   8 bytes: 16 addr: 0070 rec.type: Data(00) bytes: 80 78 70 68 60 58 50 48 40 38 30 28 20 18 10 08 chksum: 40 
+line:   9 bytes: 16 addr: 0080 rec.type: Data(00) bytes: 7F 72 66 59 4D 42 37 2D 24 1B 14 0E 08 04 01 00 chksum: 5F 
+line:  10 bytes: 16 addr: 0090 rec.type: Data(00) bytes: 00 00 03 06 0B 11 17 1F 28 32 3D 48 53 60 6C 79 chksum: 8E 
+line:  11 bytes: 16 addr: 00A0 rec.type: Data(00) bytes: 85 92 9E AB B6 C1 CC D6 DF E7 ED F3 F8 FB FE FE chksum: 42 
+line:  12 bytes: 16 addr: 00B0 rec.type: Data(00) bytes: FE FD FA F6 F0 EA E3 DA D1 C7 BC B1 A5 98 8C 7F chksum: 71 
+line:  13 bytes: 16 addr: 00C0 rec.type: Data(00) bytes: 33 31 2E 28 20 18 0F 07 01 00 02 0B 1A 2F 49 67 chksum: 21 
+line:  14 bytes: 16 addr: 00D0 rec.type: Data(00) bytes: 87 A6 C2 DA EC F8 FE FE FA F3 EB E2 DA D3 CE CC chksum: 76 
+line:  15 bytes: 16 addr: 00E0 rec.type: Data(00) bytes: CC CE D3 DA E2 EB F3 FA FE FE F8 EC DA C2 A6 87 chksum: 66 
+line:  16 bytes: 16 addr: 00F0 rec.type: Data(00) bytes: 67 49 2F 1A 0B 02 00 01 07 0F 18 20 28 2E 31 33 chksum: F1 
+line:  17 End of file(01)
